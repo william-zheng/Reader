@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-stylesheet default.css?>
+
+<BorderPane fx:id="bp_root" minWidth="-Infinity" prefHeight="684.0" prefWidth="1080.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="name.zwy.reader.ReaderController">
+  <!-- TODO Add Nodes -->
+  <top>
+    <VBox prefHeight="66.0" prefWidth="1080.0" styleClass="bg_main_top">
+      <children>
+        <HBox onMouseDragged="#onWindowDragged" onMousePressed="#onWindowPressed" prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@skin/icon.main.16.png" />
+              </image>
+              <HBox.margin>
+                <Insets bottom="5.0" left="8.0" right="5.0" top="8.0" />
+              </HBox.margin>
+            </ImageView>
+            <Label text="小说阅读器">
+              <font>
+                <Font name="Microsoft YaHei Bold" size="16.0" />
+              </font>
+              <HBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+              </HBox.margin>
+            </Label>
+            <MenuButton fx:id="btn_main_menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#main_menu_m_entered" onMouseExited="#main_menu_m_exited" prefHeight="16.0" prefWidth="16.0" styleClass="sys-menu-button" text="">
+              <items>
+                <Menu mnemonicParsing="false" text="最近阅读" fx:id="menu_recent_file">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="清空历史记录" />
+                    <SeparatorMenuItem mnemonicParsing="false" />
+                  </items>
+                </Menu>
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#openFile" text="打开">
+                  <accelerator>
+                    <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                  </accelerator>
+                </MenuItem>
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" text="打印">
+                  <accelerator>
+                    <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                  </accelerator>
+                </MenuItem>
+                <MenuItem disable="true" mnemonicParsing="false" text="另存为TXT" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" text="官网" />
+                <MenuItem mnemonicParsing="false" text="关于" />
+                <MenuItem mnemonicParsing="false" text="反馈" />
+                <MenuItem mnemonicParsing="false" text="帮助" />
+                <MenuItem mnemonicParsing="false" text="升级" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" text="设置">
+                  <accelerator>
+                    <KeyCodeCombination alt="DOWN" code="O" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                  </accelerator>
+                </MenuItem>
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" text="退出">
+                  <accelerator>
+                    <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                  </accelerator>
+                </MenuItem>
+              </items>
+              <HBox.margin>
+                <Insets top="8.0" fx:id="x1" />
+              </HBox.margin>
+            </MenuButton>
+            <Region prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+            <Label id="title" fx:id="lbl_title" text="aaaa" HBox.margin="$x1">
+              <font>
+                <Font name="Microsoft YaHei" size="16.0" />
+              </font>
+            </Label>
+            <Region prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+            <HBox prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <ImageView id="btn_sys_min" fitHeight="19.0" fitWidth="32.0" onMouseClicked="#onClick_MinBtn" pickOnBounds="true" preserveRatio="true" styleClass="btn_sys_min" />
+                <ImageView id="btn_sys_max" fitHeight="19.0" fitWidth="32.0" onMouseClicked="#onClick_MaxBtn" pickOnBounds="true" preserveRatio="true" />
+                <ImageView id="btn_sys_close" fitHeight="19.0" fitWidth="32.0" onMouseClicked="#systemClose" pickOnBounds="true" preserveRatio="true" />
+              </children>
+              <HBox.margin>
+                <Insets />
+              </HBox.margin>
+            </HBox>
+          </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+          <children>
+            <Button id="btn_book_open" mnemonicParsing="false" onAction="#openFile" text="">
+              <HBox.margin>
+                <Insets top="5.0" fx:id="x2" />
+              </HBox.margin>
+            </Button>
+            <Button id="btn_book_print" mnemonicParsing="false" text="" HBox.margin="$x2" />
+            <Separator orientation="VERTICAL" prefHeight="-1.0" prefWidth="-1.0">
+              <HBox.margin>
+                <Insets bottom="8.0" left="1.0" right="1.0" top="8.0" />
+              </HBox.margin>
+            </Separator>
+            <Button id="btn_book_cursor" disable="true" mnemonicParsing="false" text="" HBox.margin="$x2" />
+            <Button id="btn_book_selecttext" mnemonicParsing="false" text="" HBox.margin="$x2" />
+            <Separator orientation="VERTICAL" prefHeight="-1.0" prefWidth="-1.0">
+              <HBox.margin>
+                <Insets bottom="8.0" left="1.0" right="1.0" top="8.0" />
+              </HBox.margin>
+            </Separator>
+            <Button id="btn_book_selecttext" mnemonicParsing="false" text="">
+              <HBox.margin>
+                <Insets top="5.0" fx:id="x2" />
+              </HBox.margin>
+            </Button>
+            <Button id="btn_book_selecttext" mnemonicParsing="false" text="">
+              <HBox.margin>
+                <Insets top="5.0" fx:id="x2" />
+              </HBox.margin>
+            </Button>
+            <Separator orientation="VERTICAL" prefHeight="-1.0" prefWidth="-1.0">
+              <HBox.margin>
+                <Insets bottom="8.0" left="1.0" right="1.0" top="8.0" />
+              </HBox.margin>
+            </Separator>
+            <MenuButton graphicTextGap="0.0" mnemonicParsing="false" prefWidth="-1.0" styleClass="sys-menu-button" text="背景">
+              <items>
+                <MenuItem mnemonicParsing="false" text="操作 1" />
+                <MenuItem mnemonicParsing="false" text="操作 2" />
+              </items>
+              <HBox.margin>
+                <Insets top="8.0" fx:id="x1" />
+              </HBox.margin>
+            </MenuButton>
+            <Button id="btn_book_selecttext" mnemonicParsing="false" text="">
+              <HBox.margin>
+                <Insets top="5.0" fx:id="x2" />
+              </HBox.margin>
+            </Button>
+            <Region prefHeight="33.0" prefWidth="121.0" />
+            <Button id="btn_book_pageup" mnemonicParsing="false" text="">
+              <HBox.margin>
+                <Insets top="5.0" fx:id="x2" />
+              </HBox.margin>
+            </Button>
+            <Button id="btn_book_pagedown" mnemonicParsing="false" text="">
+              <HBox.margin>
+                <Insets top="5.0" fx:id="x2" />
+              </HBox.margin>
+            </Button>
+            <TextField fx:id="tf_curr_page" alignment="CENTER_RIGHT" onKeyPressed="#gotoPage" prefWidth="41.0" promptText="" text="1">
+              <HBox.margin>
+                <Insets top="8.0" fx:id="x1" />
+              </HBox.margin>
+            </TextField>
+            <Label fx:id="lbl_page_count" text="/ 123">
+              <HBox.margin>
+                <Insets right="10.0" top="10.0" />
+              </HBox.margin>
+            </Label>
+            <Button id="btn_book_zoomin" mnemonicParsing="false" text="">
+              <HBox.margin>
+                <Insets left="10.0" top="5.0" />
+              </HBox.margin>
+            </Button>
+            <Button id="btn_book_zoomout" mnemonicParsing="false" text="">
+              <HBox.margin>
+                <Insets top="5.0" fx:id="x2" />
+              </HBox.margin>
+            </Button>
+            <ComboBox editable="true" promptText="100">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="项 1" />
+                  <String fx:value="项 2" />
+                  <String fx:value="项 3" />
+                </FXCollections>
+              </items>
+              <HBox.margin>
+                <Insets top="8.0" fx:id="x1" />
+              </HBox.margin>
+            </ComboBox>
+            <Region prefHeight="200.0" prefWidth="200.0" />
+          </children>
+          <padding>
+            <Insets />
+          </padding>
+          <VBox.margin>
+            <Insets left="20.0" right="20.0" />
+          </VBox.margin>
+        </HBox>
+      </children>
+      <BorderPane.margin>
+        <Insets />
+      </BorderPane.margin>
+    </VBox>
+  </top>
+</BorderPane>

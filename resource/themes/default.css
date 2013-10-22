@@ -1,0 +1,166 @@
+.root {
+	-fx-background-image: url("skin/bg.main.read.png");
+	-fx-border-color: rgb(173,186,204);
+}
+
+.showborder {
+	-fx-border-color: red;
+}
+
+.bg_main_top {
+	-fx-background-image: url("skin/bg.main.top.png");
+}
+
+/* menu样式 */
+.sys-menu-button {
+	-fx-background-color: null;
+}
+/* menu样式 */
+.button {
+	-fx-background-color: null;
+}
+/*
+#btn_main_menu {
+	-fx-background-image: url("skin/btn.main.menu_01.png");
+	
+}
+
+#btn_main_menu:hover  {
+	-fx-background-image: url("skin/btn.main.menu_02.png");
+}
+
+#btn_main_menu:active {
+	-fx-background-image: url("skin/btn.main.menu_03.png");
+}
+ */
+/* 最小化，最大化，关闭按钮 */
+#btn_sys_min {
+    -fx-image: url("skin/btn.sys.min.png");
+}
+
+#btn_sys_min:hover {
+    -fx-image: url("skin/btn.sys.min.hover.png");
+}
+
+#btn_sys_max {
+    -fx-image: url("skin/btn.sys.max.png");
+}
+
+#btn_sys_max:hover {
+    -fx-image: url("skin/btn.sys.max.hover.png");
+}
+
+#btn_sys_close {
+    -fx-image: url("skin/btn.sys.close.png");
+}
+
+#btn_sys_close:hover {
+    -fx-image: url("skin/btn.sys.close.hover.png");
+}
+
+/* 工具栏  */
+/*
+.separator {
+	-fx-background-image: url("skin/bg.toolbar.separator.png");
+	-fx-background-repeat: no-repeat ;
+	-fx-background-color: null;
+}
+*
+*/
+#btn_book_open {
+	-fx-background-image: url("skin/btn.book.open_01.png");
+}
+#btn_book_print {
+	-fx-background-image: url("skin/btn.book.print_01.png");
+}
+#btn_book_cursor {
+	-fx-background-image: url("skin/btn.book.cursor_01.png");
+}
+#btn_book_selecttext {
+	-fx-background-image: url("skin/btn.book.selecttext_01.png");
+}
+#btn_book_pageup {
+	-fx-background-image: url("skin/btn.book.pageup_01.png");
+}
+#btn_book_pagedown {
+	-fx-background-image: url("skin/btn.book.pagedown_01.png");
+}
+#btn_book_zoomin {
+	-fx-background-image: url("skin/btn.book.zoomin_01.png");
+}
+#btn_book_zoomout {
+	-fx-background-image: url("skin/btn.book.zoomout_01.png");
+}
+
+/* tab标签  */
+.tab_book_item {
+	-fx-background-color: yellow ;
+	-fx-border-radius :8em ;
+}
+
+.tab-header-background {
+	-fx-background-color: null ;
+}
+/* 看书背景 */
+/*
+.tab {
+	-fx-background-image: url("skin/bg.main.read.png");
+}
+* .tab {
+	-fx-background-image: url("skin/tab.book.item_05_01.png"), url("skin/tab.book.item_05_02.png"), url("skin/tab.book.item_05_03.png");
+	
+	-fx-background-repeat: no-repeat, repeat-x, no-repeat ;
+	-fx-background-position: left , center, right;
+	-fx-background-color: null ;
+	
+	-fx-background-size: auto , cover , auto;
+}
+
+* 
+*/
+
+.tab {
+	-fx-background-color: rgb(215,219,224) ;
+	-fx-background-insets: 0 2 0 2;
+	-fx-background-radius: 0 0 5 5;
+	-fx-border-color: rgb(173,186,204) transparent transparent transparent;
+	-fx-border-radius: -5 -5 0 0;
+}
+
+.tab:selected {
+	-fx-background-color: linear-gradient(rgb(237,241,247), rgb(253,253,253)) ;
+	-fx-background-insets: 0 2 0 2;
+	-fx-background-radius: 0 0 5 5;
+	-fx-border-color: transparent rgb(79,93,105) rgb(79,93,105) rgb(79,93,105);
+	-fx-border-insets: 0 2 0 2;
+	-fx-border-radius: 0 0 5 5;
+}
+
+.tab:disabled {
+    -fx-opacity: -fx-disabled-opacity;
+}
+
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 0 0;
+    -fx-padding: 0 0.166667em 0.816667em 0.833em; /* 0 2 5 0 */
+	-fx-background-color: null ;
+}
+
+
+.scroll-pane {
+	-fx-background-image: url("skin/bg.main.read.png");
+}
+
+.reader-cursor {
+	-fx-cursor: OPEN_HAND;
+}
+
+.book_background {
+	-fx-background-color: rgb(210,227,199);
+}
+
+.book_font {
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 16pt;
+	-fx-label-padding: 5 0 5 0
+}
